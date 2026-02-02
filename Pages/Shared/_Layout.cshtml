@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DaVende Sound</title>
+    <link rel="icon" type="image/x-icon" href="~/images/DaVendeSound.ico" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body style="--bg-image: url('@(Model is Microsoft.AspNetCore.Mvc.RazorPages.PageModel
+ ? (Model as dynamic).MediaBaseUrl + "black_abstract_stone_pattern_tileable.jpg"
+ : "https://davendestaticimages.blob.core.windows.net/davendesiteimages/black_abstract_stone_pattern_tileable.jpg")')">
+    <header class="pt-3">
+        <div class="container text-center border border-warning border-5 pb-0">
+            <h1 class="fw-bold fst-italic display-3 text-warning m-0">DaVende Sound</h1>
+            <h2 class="mt-0 pt-0 mb-2 text-info pb-0">Premier DJ, Sound and Lighting Services</h2>
+        </div>
+        <p class="fw-bold fst-italic fs-4 text-warning text-center m-0">Call Us @@601-209-4938</p>
+        <nav class="navbar navbar-expand-sm navbar-light w-100 p-0">
+            <div class="container justify-content-center">
+                <ul class="navbar-nav flex-grow-1 justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-info text-decoration-underline" asp-area="" asp-page="/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-info text-decoration-underline" asp-area="" asp-page="/Packages">DJ Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-info text-decoration-underline" asp-area="" asp-page="/Photos">Photo/Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-info text-decoration-underline" asp-area="" asp-page="/ProSound">Pro Sound</a>
+                    </li>
+                </ul>
+                @* <partial name="_LoginPartial" /> *@
+            </div>
+        </nav>
+    </header>
+    <main class="container my-5 d-flex justify-content-center">
+        <div class="w-100" style="max-width:1000px;">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="border-top footer text-muted mt-4">
+        <div class="container">
+            &copy;2025 - DaVende Sound - <a asp-area="" asp-page="/Privacy">Privacy</a><br/>
+            Email: <a href="mailto:sales@davendesound.com">sales@davendesound.com</a> | Phone: (601)209-4938
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

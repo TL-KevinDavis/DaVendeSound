@@ -1,0 +1,42 @@
+﻿@page
+@model DaVende_Sound.Pages.Index1Model
+@{
+}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+function plotCharacters(filePath) {
+  //Get the file that was passed     
+  fetch(filePath)
+  .then(response => response.text())
+  .then(text => {
+    //get the File into a row array
+    const textArray = text.split("\r\n");
+    console.log(textArray);
+    let canArray = [];
+    //Split textArray rows into new Array elemts in char/x/y order.
+    textArray.forEach(row => {
+      canArray.push([row.split(",")[1].toString(),
+                     row.split(",")[0].toString(), 
+                     row.split(",")[2].toString()]);
+    });
+    console.log(canArray);
+    //Get element we will display the file contents within
+    const thisDiv = document.getElementById("myDiv");
+    const canvas = document.getElementById('myChart');
+    const ctx = canvas.getContext('2d');
+    ctx.font = '1pt Arial';
+    ctx.fillStyle = 'black';
+    //Assign values to the selected element
+    canArray.forEach(row => {
+      ctx.fillText(row[0].toString(), row[1], row[2]);
+    });
+  })
+  .catch(error => {
+    console.error('Unable to complete:', error);
+  })
+}
+</script>
+
+<button onclick=plotCharacters('./images/CharMap2.txt');>Run Function</button>
+ @* <div id="myDiv">This Div</div> *@
+<canvas id="myChart" style="height:1200px; width:900px; margin-top: 50px; padding-top: 50px"></canvas>

@@ -1,0 +1,183 @@
+﻿@page
+@model IndexModel
+@{
+ ViewData["Title"] = "Home page";
+}
+
+<script>
+ // Modal/Slideshow functions copied from Photos page style (plain JS)
+ let slideIndex = 1;
+
+ function openModal(m) {
+ const modal = document.getElementById(`myModal${m}`);
+ if (modal) modal.style.display = 'inline';
+ slideIndex = 1;
+ showSlides(slideIndex, m);
+ }
+
+ function closeModal(m) {
+ const modal = document.getElementById(`myModal${m}`);
+ if (modal) modal.style.display = 'none';
+ }
+
+ function plusSlides(n, m) {
+ showSlides(slideIndex += n, m);
+ }
+
+ function currentSlide(n, m) {
+ showSlides(slideIndex = n, m);
+ }
+
+ function showSlides(n, m) {
+ const slides = document.getElementsByClassName(`mySlides${m}`);
+ let si = n;
+ if (si > slides.length) si = 1;
+ if (si < 1) si = slides.length;
+ for (let i = 0; i < slides.length; i++) {
+ slides[i].style.display = 'none';
+ }
+ if (slides.length > 0) {
+ slides[si - 1].style.display = 'block';
+ }
+ slideIndex = si;
+ }
+</script>
+
+<ul class="container-hc" style="padding-left:0px; padding-top:0px; margin-top:20px; margin-bottom:10px">
+ <li class="item"><a onclick="openModal(1);currentSlide(1,1)" class="hover-shadow" title="01"><img src="@(Model.MediaBaseUrl + "RadianceParty.JPEG")" alt="01" style="height:150px; width:250px"></a></li>
+ <li class="item"><a onclick="openModal(1);currentSlide(2,1)" class="hover-shadow" title="02"><img src="@(Model.MediaBaseUrl + "MyersReception.JPG")" alt="02" style="height:150px; width:250px"></a></li>
+ <li class="item"><a onclick="openModal(1);currentSlide(3,1)" class="hover-shadow" title="03"><img src="@(Model.MediaBaseUrl + "UrsineWedding1.jpeg")" alt="03" style="height:150px; width:250px"></a></li>
+ <li class="item"><a onclick="openModal(1);currentSlide(4,1)" class="hover-shadow" title="04"><img src="@(Model.MediaBaseUrl + "ReevesWedding3.JPG")" alt="04" style="height:150px; width:250px"></a></li>
+ <li class="item"><a onclick="openModal(1);currentSlide(5,1)" class="hover-shadow" title="05"><img src="@(Model.MediaBaseUrl + "LofreddoWedding1.JPEG")" alt="05" style="height:150px; width:250px"></a></li>
+</ul>
+<!-- The Modal/Lightbox -->
+<div id="myModal1" class="modal" style="navbar navbar-expand-sm">
+ <p class="close cursor" onclick="closeModal(1)" style="line-height:20px">&times;</p>
+ <div class="modal-content">
+
+ <div class="mySlides1">
+ <div class="numbertext">1 /5</div>
+ <img src="@(Model.MediaBaseUrl + "RadianceParty.JPEG")" style="width:100%">
+ </div>
+
+ <div class="mySlides1">
+ <div class="numbertext">2 /5</div>
+ <img src="@(Model.MediaBaseUrl + "MyersReception.JPG")" style="width:100%">
+ </div>
+ 
+ <div class="mySlides1">
+ <div class="numbertext">3 /5</div>
+ <img src="@(Model.MediaBaseUrl + "UrsineWedding1.jpeg")" style="width:100%">
+ </div>
+
+ <div class="mySlides1">
+ <div class="numbertext">4 /5</div>
+ <img src="@(Model.MediaBaseUrl + "ReevesWedding3.JPG")" style="width:100%">
+ </div>
+
+ <div class="mySlides1">
+ <div class="numbertext">5 /5</div>
+ <img src="@(Model.MediaBaseUrl + "LofreddoWedding1.JPEG")" style="width:100%">
+ </div>
+
+ <!-- Next/previous controls -->
+ <a class="prev" onclick="plusSlides(-1,1)">&#10094;</a>
+ <a class="next" onclick="plusSlides(1,1)">&#10095;</a>
+
+ <!-- Caption text -->
+ <div class="caption-container">
+ <p id="caption"></p>
+ </div>
+ </div>
+</div>
+
+<div style="text-align: center; margin-top:0px; padding:0px; margin-bottom:0px">
+ <h1 style="color:yellow">We offer <u>3 sizes</u> of sound systems</h1>
+ <h1 style="color:yellow">for audiences from <u>100 to2000</u></h1>
+ <h4 style="margin-top:20px">We service <u>ALL</u> of Mississpi and Memphis, TN too!!</h4>
+ <h4>We Service <u>ALL</u> of Louisiana and all the way over to Mobile, AL!!</h4>
+ <h3>We will travel up to 4 <u>HOURS</u> from Vicksburg, MS!!!</h3>
+ <h2 style="margin-top:25px; color:yellow; margin-bottom:0px; text-decoration:underline">DJ doesn't play your music???</h2>
+ <h4 style="margin-top:10px; margin-bottom:0px">We play the music you want to hear during your event!!</h4>
+ <h3 style="margin-top:15px; margin-bottom:25px; line-height:20px">Pick your favorite music using Spotify or Tidal</h3>
+ <h3 style="margin-top:15px; margin-bottom:25px; line-height:20px">and <u>that's the songs we play</u> at your event!!</h3>
+ <h4 style="margin-bottom:0px; padding-bottom:0px">With more than a million songs in our catolog</h3>
+ <h3 style="margin-top:5px; padding-bottom:0px">we can take any request at your event.</h2>
+ <h3 style="margin-top:15px; color:yellow; padding-top:0px; line-height:20px; text-decoration:underline">Any Era! Any Style! Any Ethnicity! We can play it all!!</h3>
+</div>
+
+<ul class="container-hc" style="padding-left:0px; margin-bottom:5px; margin-top:30px">
+ <li class="item"><a onclick="openModal(2);currentSlide(1,2)" class="hover-shadow" title="01"><img src="@(Model.MediaBaseUrl + "RadianceParty2.jpeg")" alt="01" ></a></li>
+ <li class="item"><a onclick="openModal(2);currentSlide(2,2)" class="hover-shadow" title="02"><img src="@(Model.MediaBaseUrl + "UrsineWedding2.jpeg")" alt="02" style="height:150px; width:250px"></a></li>
+ <li class="item"><a onclick="openModal(2);currentSlide(3,2)" class="hover-shadow" title="03"><img src="@(Model.MediaBaseUrl + "WheatleyWedding.jpeg")" alt="03" style="height:150px; width:250px"></a></li>
+ <li class="item"><a onclick="openModal(2);currentSlide(4,2)" class="hover-shadow" title="04"><img src="@(Model.MediaBaseUrl + "LofreddoWedding2.JPEG")" alt="04" style="height:150px; width:250px"></a></li>
+ <li class="item"><a onclick="openModal(2);currentSlide(5,2)" class="hover-shadow" title="05"><img src="@(Model.MediaBaseUrl + "ReevesWedding4.JPG")" alt="05" style="height:150px; width:250px"></a></li>
+</ul>
+<!-- The Modal/Lightbox -->
+<div id="myModal2" class="modal">
+ <p class="close cursor" onclick="closeModal(2)" style="line-height:20px">&times;</p>
+ <div class="modal-content">
+
+ <div class="mySlides2">
+ <div class="numbertext">1 /5</div>
+ <img src="@(Model.MediaBaseUrl + "RadianceParty2.jpeg")" style="width:100%">
+ </div>
+
+ <div class="mySlides2">
+ <div class="numbertext">2 /5</div>
+ <img src="@(Model.MediaBaseUrl + "UrsineWedding2.jpeg")" style="width:100%">
+ </div>
+
+ <div class="mySlides2">
+ <div class="numbertext">3 /5</div>
+ <img src="@(Model.MediaBaseUrl + "WheatleyWedding.jpeg")" style="width:100%">
+ </div>
+
+ <div class="mySlides2">
+ <div class="numbertext">4 /5</div>
+ <img src="@(Model.MediaBaseUrl + "LofreddoWedding2.JPEG")" style="width:100%">
+ </div>
+
+ <div class="mySlides2">
+ <div class="numbertext">5 /5</div>
+ <img src="@(Model.MediaBaseUrl + "ReevesWedding4.JPG")" style="width:100%">
+ </div>
+
+ <!-- Next/previous controls -->
+ <a class="prev" onclick="plusSlides(-1,2)">&#10094;</a>
+ <a class="next" onclick="plusSlides(1,2)">&#10095;</a>
+
+ <!-- Caption text -->
+ <div class="caption-container">
+ <p id="caption"></p>
+ </div>
+ </div>
+</div>
+
+<div style="text-align: center">
+ <h3 style="margin-bottom:0px; padding-bottom:0px">We also offer lighting packages for both</h3>
+ <h1 style="text-decoration:underline; color:yellow; margin-top:10px">Dance Floor and Accent Lighting</h1>
+ <h5 style="margin-bottom:7px; margin-top:20px; padding:0px">Our dance floor lights DON'T just flash and change between a few colors.</h5>
+ <h5 style="margin-bottom:7px; padding-top:0px; line-height:22px">Our lights transition between colors, chase, strobe and</h5>
+ <h4 style="margin-bottom:7px; padding-top:0px; line-height:22px"><u>pulse to the beat</u> of the music</h4>
+ <h4 style="margin-top:15px">Our dance floor lights are like</h4>
+ <h2 style="margin-bottom:20px; color:yellow; line-height:22px; text-decoration: underline">a headline concert or a high-end dance club</h2>
+ <h4 style="margin-bottom:7px; margin-top:40px; line-height:22px">For accent or uplighting we can color your event any color you wish</h4>
+ <h4 style="margin-bottom:0px; padding-top:15px; line-height:22px">We have a large lighting inventory that can suit a variety of needs.</h4>
+ <h3 style="margin-bottom:50px; padding-top:25px; line-height:22px"> Visit our <a asp-page="/Packages">Packages Page</a> for more details on our lighting packages
+ </h3>
+</div>
+
+<div style="text-align:center">
+	<video controls="controls" autoplay muted loop width="650" style="text-align:center">
+		<source src="@(Model.MediaBaseUrl + "ReevesWedding.MP4")" type="video/mp4" />
+	</video>
+</div>
+
+<div style="text-align:center; margin-top:25px">
+ <video controls="controls" autoplay muted loop width="650" style="text-align:center">
+ <source src="@(Model.MediaBaseUrl + "UrsineWedding.mp4")" type="video/mp4" />
+ </video>
+</div>
+
+

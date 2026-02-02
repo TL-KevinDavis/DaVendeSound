@@ -1,0 +1,82 @@
+﻿@page
+@model DaVende_Sound.Pages.PackagesModel
+@{
+    ViewData["Title"] = "Packages";
+}
+
+
+<script>
+    var list = document.querySelectorAll(".item a");
+
+    for (var i = 0; i < list.length; i++) {
+    var url = list[i].children[0].getAttribute("src");
+    list[i].style.backgroundImage="url('" + url + "')";
+    }
+</script>
+
+
+<div>
+    <ul class="container-hc" style="padding-left:0px; margin-bottom:5px">
+        <li class="item"><a class="hover-shadow"><img src="@(Model.MediaBaseUrl + "RadianceParty.JPEG")" alt="01" style="height:150px; width:250px"></a></li>
+        <li class="item"><a class="hover-shadow"><img src="@(Model.MediaBaseUrl + "MyersReception.JPG")" alt="02" style="height:150px; width:250px"></a></li>
+        <li class="item"><a class="hover-shadow"><img src="@(Model.MediaBaseUrl + "UrsineWedding1.jpeg")" alt="03" style="height:150px; width:250px"></a></li>
+        <li class="item"><a class="hover-shadow"><img src="@(Model.MediaBaseUrl + "ReevesWedding3.JPG")" alt="04" style="height:150px; width:250px"></a></li>
+        <li class="item"><a class="hover-shadow"><img src="@(Model.MediaBaseUrl + "LofreddoWedding1.JPEG")" alt="05" style="height:150px; width:250px"></a></li>
+    </ul>
+    <div style="text-align:center; margin-top:5px">
+        <h1 style="text-decoration:underline;  color:cyan; font-weight: bolder; text-align:center">DJ Packages</h1>
+        <h2 style="text-align:left; padding-left:75px">We have <u>3 system sizes</u> for DJ packages</h2>
+        <h3 style="text-align:left; color:yellow; padding-left:75px">Contact us for a custom quote at your location/venue</h3>
+        <h5 style="text-align:left; padding-left:75px">(Our quotes are based on your location but our base rates are the lowest around)</h5>
+        <ul style="text-align:left; padding-left:100px; margin-top:20px">
+            <li><h5>Our SMALL system will serve 100-150 people</h5></li>
+            <li><h5>Our MEDIUM system will serve 200-250 people</h5></li>
+            <li><h5>Our LARGE system is <u>LARGE</u>. It will serve a 1 ACRE FIELD<br />
+                    (This sytem is available for large scale events, see our Pro Sound page)</h5></li>
+        </ul>
+        <h5 style="text-align:center; padding-left:50px; padding-right:85px">You pick the music we play at your event. 
+            Make a song list on Spotify or Tidal and we will bring those songst added any  to your event!!!!<br>
+            (Purchase our dance floor package and we script the lights to your songs!!)<br><br>
+            We also bring two wireless microphones to the event that your party can use to roast and toast the bride and groom with all night long.<br>
+            We set these microphones so you can put them in your pocket and they will not feedback or even 'turn on' until you begin to speak into them.<br>
+        </h5>
+        
+        <h1 style="margin-top:40px; text-decoration:underline;  color:cyan; font-weight: bolder; text-align:Center">Lighting Packages</h1>
+        <h2 style="text-align:center; margin-top:5px">We have 3 lighting packages to choose!!</h2>
+        <h2 style="text-align:center; text-decoration:underline;  color:cyan; font-weight:bold">Dance Floor Lighting</h2>
+        <h5 style="text-align:center; padding-left:0px; padding-right:0px; margin-top:5px">
+            Our Dance Floor Lighting is a cut above the rest.<br />
+            We use integrated software to run our dance floor lights from scripts!!<br />
+            Out lights pulse, transition, chase and strobe to each and every song. <br />
+            Our Dance Floor Package starts with 15 feet of lighting trusses that<br />
+            we will raise 10 feet over your dance floor.<br />
+            We then hang 9 LED 'PAR' lights from that trestle along with<br />
+            2 Laser Light units that 
+            we use like multi color disco balls.<br/>
+            We also have a large fog machine that we can use for entrances<br />
+            or just to enhance the effect of the laser lights.
+        </h5>
+        <h4 style="font-style:italic; color:yellow; margin-bottom:25px; text-decoration:underline">Our Standard Dance Floor Package is an additional $400</h4>
+        
+        <h3>We offer a MINI dance floor lighting package</h3>
+        <h5>without the Laser Units or the Fog machine</h5>
+        <h5>We will hang 8 LED PAR lights from 5-foot totems keeping the lights lower to the floor</h5>
+        <h5>This is a great option for venues with lower ceilings!! </h5>
+        <h4 style="font-style:italic; color:yellow; margin-bottom:25px ; text-decoration:underline">Our Mini Dance Floor Package is an additional $300</h4>
+        
+        <h2 style="font-style:italic; color:yellow; text-decoration:underline">Our <u>FULL DANCE FLOOR</u> Package</h2>
+        <h4>Combines our Accent Lighting package into</h4>
+        <h3>the ULTIMATE Dance Floor Package</h3>
+        <h4 style="line-height:35px">We can incorporate our full lighting inventory in our<br />
+            scripted light shows making each and every song a hit!!</h4>
+
+        <h2 style="text-align:center; margin-top:25px; color:cyan; text-decoration:underline; font-weight:bold">Accent/Uplighting</h2>
+        <h5 style="text-align:center; padding-left:75px; padding-right:100px; margin-top:5px">
+            We have 8 battery operated LED 'PAR' lights that can sit anywhere in your venue.
+            Being battery powered we do not have to run wires to them. 
+            They can even be used for area lighting outdoors.
+        </h5>
+        <h4 style="font-style:italic; color:yellow; text-decoration:underline">Our Accent/Uplighting Package is an additional $200</h4>
+        <h4 style="margin-top: 25px; color:yellow">We can also quote you a-la-carte pricing on lights. Contact us for details</h4>
+    </div>
+</div>
